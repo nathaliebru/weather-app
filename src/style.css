@@ -61,6 +61,10 @@ img {
   margin: 0 auto;
 }
 
+footer {
+  font-size: 12px;
+}
+
 .container {
   max-width: 600px;
 }
