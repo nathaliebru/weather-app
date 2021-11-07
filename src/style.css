@@ -24,8 +24,8 @@ h2 {
 }
 
 h3 {
-  font-size: 70px;
-  margin: 10px 0 30px;
+  font-size: 55px;
+  text-align: left;
 }
 
 a {
@@ -56,7 +56,18 @@ button:hover {
 }
 
 img {
-  width: 115px;
+  width: 100px;
+}
+
+ul {
+  list-style: none;
+  font-weight: lighter;
+  padding: 40px 0 0;
+  margin: 0;
+}
+
+li {
+  text-align: right;
 }
 
 footer {
@@ -79,7 +90,7 @@ footer {
 
 .units {
   position: relative;
-  top: -38px;
+  top: -25px;
   font-size: 16px;
 }
 
@@ -96,6 +107,10 @@ footer {
 .temperature {
   position: relative;
   top: 10px;
+}
+
+.current-temperature {
+  margin-bottom: 30px;
 }
 
 #weather-type {
