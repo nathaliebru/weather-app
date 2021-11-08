@@ -54,7 +54,6 @@ function dateUpdate(timestamp) {
 
 function showTemperature(response) {
   let icon = response.data.weather[0].description;
-  console.log(response.data);
 
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
@@ -69,7 +68,7 @@ function showTemperature(response) {
   document.querySelector("#date").innerHTML = dateUpdate(
     response.data.dt * 1000
   );
-  document.querySelector("#icon").setAttribute("src", `images${icon}.svg`);
+  document.querySelector("#icon").setAttribute("src", `images/${icon}.svg`);
 }
 
 function searchCity(city) {
