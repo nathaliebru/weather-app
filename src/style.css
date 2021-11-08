@@ -1,9 +1,5 @@
 body {
-  background: radial-gradient(
-    343px at 46.3% 47.5%,
-    rgb(242, 242, 242) 0%,
-    rgb(241, 241, 241) 72.9%
-  );
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 h1,
@@ -16,6 +12,8 @@ h3 {
 
 h1 {
   margin-bottom: 0;
+  text-decoration: underline;
+  margin: 10px;
 }
 
 h2 {
@@ -71,6 +69,7 @@ li {
 }
 
 footer {
+  margin: 10px 0;
   font-size: 12px;
 }
 
@@ -78,8 +77,10 @@ footer {
   max-width: 600px;
 }
 
-.border {
+.border-3 {
   background: #fff;
+  border: 10px solid #f59e0b;
+  box-shadow: 5px 5px 10px rgb(148, 148, 148);
 }
 
 .search {
