@@ -83,7 +83,7 @@ footer {
 }
 
 .search {
-  text-align: center;
+  text-align: left;
   margin-bottom: 30px;
   font-family: "Oswald", sans-serif;
 }
@@ -111,6 +111,10 @@ footer {
 
 .current-temperature {
   margin-bottom: 30px;
+}
+
+#search-city {
+  width: 250px;
 }
 
 #weather-type {
