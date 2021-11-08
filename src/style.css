@@ -120,3 +120,7 @@ footer {
   margin: 0;
   font-family: "Oswald", sans-serif;
 }
+
+#weather-type:first-letter {
+  text-transform: capitalize;
+}

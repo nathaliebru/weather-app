@@ -53,12 +53,15 @@ function dateUpdate(timestamp) {
 }
 
 function showTemperature(response) {
+  let icon = response.data.weather[0].description;
+  console.log(response.data);
+
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
   );
   document.querySelector("#weather-type").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
@@ -66,6 +69,7 @@ function showTemperature(response) {
   document.querySelector("#date").innerHTML = dateUpdate(
     response.data.dt * 1000
   );
+  document.querySelector("#icon").setAttribute("src", `images${icon}.svg`);
 }
 
 function searchCity(city) {
