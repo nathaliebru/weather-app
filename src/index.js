@@ -1,33 +1,56 @@
-//Display current day and time
-let currentTime = new Date();
+// //Display current day and time
+// let currentTime = new Date();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+// let days = [
+//   "Sunday",
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+// ];
 
-let currentDay = days[currentTime.getDay()];
+// let currentDay = days[currentTime.getDay()];
 
-let currentHour = currentTime.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
-}
+// let currentHour = currentTime.getHours();
+// if (currentHour < 10) {
+//   currentHour = `0${currentHour}`;
+// }
 
-let currentMinutes = currentTime.getMinutes();
-if (currentMinutes < 10) {
-  currentMinutes = `0${currentMinutes}`;
-}
-let h2 = document.querySelector("h2");
-h2.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
+// let currentMinutes = currentTime.getMinutes();
+// if (currentMinutes < 10) {
+//   currentMinutes = `0${currentMinutes}`;
+// }
+// let date = document.querySelector("#date");
+// date.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
 
 //Input and output search a city
+function dateUpdate(timestamp) {
+  let date = new Date(timestamp);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+  let hour = date.getHours();
+  // if (hour < 10) {
+  //   hour = `0${hour}`;
+
+  let minutes = date.getMinutes();
+  // if (minutes < 10) {
+  // minutes = `0${minutes}`;
+
+  return `${day} ${hour}:${minutes}`;
+}
+
 function showTemperature(response) {
-  console.log(response);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector(".temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -37,6 +60,9 @@ function showTemperature(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#date").innerHTML = dateUpdate(
+    response.data.dt * 1000
   );
 }
 
