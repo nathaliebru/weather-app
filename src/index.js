@@ -52,6 +52,30 @@ function dateUpdate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+       <div class="col-2">
+         ${day}
+         <img src="images/rain.svg" alt="rain" width="50px" />
+         <div class="weather-forecast-temperature">
+           <span class="weather-forecast-temperature-min"> 10° </span>
+           <span class="weather-forecast-temperature-max"> 14° </span>
+         </div>
+       </div>
+     `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemperature(response) {
   let icon = response.data.weather[0].description;
 
@@ -138,3 +162,4 @@ let celsiusTemperature = null;
 
 //Default city on page
 searchCity("Amsterdam");
+displayForecast();
