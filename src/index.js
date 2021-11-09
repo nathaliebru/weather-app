@@ -83,6 +83,8 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-city").value;
   searchCity(city);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -101,6 +103,8 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 let buttonCurrent = document.querySelector("#current-location");
