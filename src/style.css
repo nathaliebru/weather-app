@@ -1,5 +1,6 @@
 body {
   background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: "Oswald", sans-serif;
 }
 
 h1,
@@ -7,7 +8,6 @@ h2,
 h3 {
   text-align: center;
   font-size: 36px;
-  font-family: "Oswald", sans-serif;
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
 }
 
 h2 {
-  font-weight: lighter;
+  font-weight: 300;
   font-size: 16px;
 }
 
@@ -53,13 +53,13 @@ button:hover {
   opacity: 80%;
 }
 
-img {
+h3 img {
   width: 100px;
 }
 
 ul {
   list-style: none;
-  font-weight: lighter;
+  font-weight: 300;
   padding: 40px 0 0;
   margin: 0;
 }
@@ -70,7 +70,9 @@ li {
 
 footer {
   margin: 10px 0;
-  font-size: 12px;
+  padding-left: 3px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
@@ -86,7 +88,6 @@ footer {
 .search {
   text-align: center;
   margin-bottom: 30px;
-  font-family: "Oswald", sans-serif;
 }
 
 .units {
@@ -95,23 +96,9 @@ footer {
   font-size: 16px;
 }
 
-.col img {
-  width: 50px;
-  display: inline;
-}
-
-.row {
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-}
-
 .temperature {
   position: relative;
   top: 10px;
-}
-
-.current-temperature {
-  margin-bottom: 30px;
 }
 
 .current-temperature .active {
@@ -128,13 +115,31 @@ footer {
 }
 
 #weather-type {
-  font-weight: lighter;
+  font-weight: 200;
   font-size: 16px;
   text-align: center;
   margin: 0;
-  font-family: "Oswald", sans-serif;
 }
 
 #weather-type:first-letter {
   text-transform: capitalize;
+}
+
+.weather-forecast {
+  text-align: center;
+  font-size: 16px;
+  margin: 10px 0 0;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto 10px;
+}
+.weather-forecast-temperature {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 50%;
 }
