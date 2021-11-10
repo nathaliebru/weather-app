@@ -52,7 +52,7 @@ function dateUpdate(timestamp) {
   return `${day} ${hour}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -74,6 +74,17 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+
+  console.log(response.data.daily);
+}
+
+function getCoordinates(coordinates) {
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiKey = "e6510698077be6c89580a721b02f9621";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
@@ -94,6 +105,8 @@ function showTemperature(response) {
     response.data.dt * 1000
   );
   document.querySelector("#icon").setAttribute("src", `images/${icon}.svg`);
+
+  getCoordinates(response.data.coord);
 }
 
 function searchCity(city) {
@@ -162,4 +175,3 @@ let celsiusTemperature = null;
 
 //Default city on page
 searchCity("Amsterdam");
-displayForecast();
