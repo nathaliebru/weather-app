@@ -104,15 +104,6 @@ footer {
   top: 10px;
 }
 
-.current-temperature .active {
-  color: #000;
-  cursor: default;
-}
-
-.current-temperature .active:hover {
-  text-decoration: none;
-}
-
 #search-city {
   width: 250px;
 }

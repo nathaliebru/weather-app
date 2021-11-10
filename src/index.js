@@ -1,30 +1,3 @@
-// //Display current day and time
-// let currentTime = new Date();
-
-// let days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-
-// let currentDay = days[currentTime.getDay()];
-
-// let currentHour = currentTime.getHours();
-// if (currentHour < 10) {
-//   currentHour = `0${currentHour}`;
-// }
-
-// let currentMinutes = currentTime.getMinutes();
-// if (currentMinutes < 10) {
-//   currentMinutes = `0${currentMinutes}`;
-// }
-// let date = document.querySelector("#date");
-// date.innerHTML = `${currentDay} ${currentHour}:${currentMinutes}`;
-
 //Input and output search a city
 function dateUpdate(timestamp) {
   let date = new Date(timestamp);
@@ -132,8 +105,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-city").value;
   searchCity(city);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -152,38 +123,10 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
 }
 
 let buttonCurrent = document.querySelector("#current-location");
 buttonCurrent.addEventListener("click", getCurrentLocation);
-
-//Fahrenheit en Celsius conversion
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureFahrenheit = (celsiusTemperature * 9) / 5 + 32;
-  let temperature = document.querySelector(".temperature");
-  temperature.innerHTML = Math.round(temperatureFahrenheit);
-}
-
-function changeToCelsius(event) {
-  event.preventDefault();
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  let temperature = document.querySelector(".temperature");
-  temperature.innerHTML = Math.round(celsiusTemperature);
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeToCelsius);
-
-let celsiusTemperature = null;
 
 //Default city on page
 searchCity("Amsterdam");
